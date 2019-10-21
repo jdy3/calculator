@@ -4,31 +4,39 @@
   <head>
     <title>Calculator</title>
     <link href="https://fonts.googleapis.com/css?family=Iceberg|Roboto&display=swap" rel="stylesheet">
-    <link rel='stylesheet' type='text/css' href='style.css'>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
 
   <body>
-    <div id='calculator'>
-    <div id='display'>0</div>
-    <button id='seven'><b>7</b></button>
-    <button id='eight'><b>8</b></button>
-    <button id='nine'><b>9</b></button>
-    <button id='divide' class='function'><b>&divide;</b></button>
-    <button id='four'><b>4</b></button>
-    <button id='five'><b>5</b></button>
-    <button id='six'><b>6</b></button>
-    <button id='multiply' class='function'><b>&times;</b></button>
-    <button id='one'><b>1</b></button>
-    <button id='two'><b>2</b></button>
-    <button id='three'><b>3</b></button>
-    <button id='subtract' class='function'><b>&minus;</b></button>
-    <button id='zero'><b>0</b></button>
-    <button id='decimal'><b>.</b></button>
-    <button id='add' class='function'><b>&plus;</b></button>
-    <button id='clear' class='function'><b>AC</b></button>
-    <button id='equals' class='function'><b>&equals;</b></button>
+    <div id="calculator">
+    <div id="display">
+      <div id="input">0</div>
+      <div id="output">0</div>
+      </div>
+    <button id="seven" onclick="iPut(7)"><b>7</b></button>
+    <button id="eight" onclick="iPut(8)"><b>8</b></button>
+    <button id="nine" onclick="iPut(9)"><b>9</b></button>
+    <button id="divide" class="operation" onclick="iPut('/')"><b>&divide;</b></button>
+    <button id="four" onclick="iPut(4)"><b>4</b></button>
+    <button id="five" onclick="iPut(5)"><b>5</b></button>
+    <button id="six" onclick="iPut(6)"><b>6</b></button>
+    <button id="multiply" class="operation" onclick="iPut('*')"><b>&times;</b></button>
+    <button id="one" onclick="iPut(1)"><b>1</b></button>
+    <button id="two" onclick="iPut(2)"><b>2</b></button>
+    <button id="three" onclick="iPut(3)"><b>3</b></button>
+    <button id="subtract" class="operation" onclick="iPut('-')"><b>&minus;</b></button>
+    <button id="zero" onclick="iPut(0)"><b>0</b></button>
+    <button id="decimal" onclick="iPut('.')"><b>.</b></button>
+    <button id="add" class="operation" onclick="iPut('+')"><b>&plus;</b></button>
+    <button id="clear" class="operation" onclick="initialise()"><b>AC</b></button>
+    <button id="equals" class="operation" onclick="iPut('=')"><b>&equals;</b></button>
     </div>
 
     <footer>
       Designed and Devloped by Judith Youziel
     </footer>
+
+
+     <script src='index.js'></script>
+  </body>
+</html>
