@@ -3,6 +3,7 @@ const outPut = document.getElementById('output');
 
 var inArray = [];
 var numArray = [];
+var minArray = [];
 var opArray = [];
 var calcArray = [];
 
@@ -12,15 +13,25 @@ function iPut(x) {
  }
 
 function oPut(x) {
-  if (x != '/' && x != '*' && x != '-' && x != '+' && x != '=') {
+  if (x != '/' && x != '*' && x != '-' && x != '+') {
+    calcArray.push(opArray.pop());
+    opArray = [];
+    calcArray.push(minArray.pop());
+    minArray = [];
     numArray.push(x);
     outPut.textContent = numArray.join('');
   }
-  else {
+  else if (x != '/' && x != '*' && x != '+') {
     calcArray.push(numArray.join(''));
     numArray = [];
-    calcArray.push(x);
-    //opArray.push(x);
+    minArray.push(x);
+    outPut.textContent = x;
+  }
+  else {
+    minArray = [];
+    calcArray.push(numArray.join(''));
+    numArray = [];
+    opArray.push(x);
     outPut.textContent = x;
   }
 }
