@@ -4,6 +4,7 @@ const outPut = document.getElementById('output');
 var inArray = [];
 var numArray = [];
 var opArray = [];
+var calcArray = [];
 
 function iPut(x) {
   inArray.push(x);
@@ -16,16 +17,21 @@ function oPut(x) {
     outPut.textContent = numArray.join('');
   }
   else {
-    opArray.push(x);
+    calcArray.push(numArray.join(''));
     numArray = [];
+    calcArray.push(x);
+    //opArray.push(x);
     outPut.textContent = x;
   }
 }
 
 function calculate() {
-  //result = 3+5*6-2/4;
+  calcArray.push(numArray.join(''));
+  numArray = [];
+  var result = calcArray.join('');
+  outPut.textContent = eval(result);
+  calcArray = [];
   //outPut.textContent = result;
-  outPut.textContent = 'result!';
 }
 
 function initialise() {
