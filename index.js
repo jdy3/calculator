@@ -28,16 +28,16 @@ function oPut(x) {
 function calculate() {
   calcArray.push(numArray.join(''));
   numArray = [];
-  var result = calcArray.join('');
-  outPut.textContent = eval(result);
+  var result = eval(calcArray.join(''));
   calcArray = [];
-  //outPut.textContent = result;
-}
+  calcArray.push(result);
+  outPut.textContent = result;
+ }
 
 function initialise() {
  outPut.textContent = 0;
  inPut.textContent = '';
  inArray = [];
  numArray = [];
- opArray = [];
+ calcArray = [];
 }
