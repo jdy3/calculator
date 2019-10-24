@@ -43,6 +43,8 @@ function calculate() {
   calcArray = [];
   calcArray.push(result);
   outPut.textContent = result;
+  inArray.push(answer);
+  inPut.textContent = inArray.join('');
  }
 
 function initialise() {
