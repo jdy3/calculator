@@ -7,6 +7,8 @@ var minArray = [];
 var opArray = [];
 var calcArray = [];
 
+var endCalc = false;
+
 function iPut(x) {
   inArray.push(x);
   inPut.textContent = inArray.join('');
@@ -14,18 +16,33 @@ function iPut(x) {
 
 function oPut(x) {
   if (x != '/' && x != '*' && x != '-' && x != '+') {
+    if (endCalc == false) {
     calcArray.push(opArray.pop());
     opArray = [];
     calcArray.push(minArray.pop());
     minArray = [];
     numArray.push(x);
     outPut.textContent = numArray.join('');
+    }
+    else {
+      initialise();
+      calcArray.push(opArray.pop());
+      opArray = [];
+      calcArray.push(minArray.pop());
+      minArray = [];
+      numArray.push(x);
+      outPut.textContent = numArray.join('');
+      inArray.push(x);
+      inPut.textContent = inArray.join('');
+      endCalc = false;
+    }
   }
   else if (x != '/' && x != '*' && x != '+') {
     calcArray.push(numArray.join(''));
     numArray = [];
     minArray.push(x);
     outPut.textContent = x;
+    endCalc = false;
   }
   else {
     minArray = [];
@@ -33,6 +50,7 @@ function oPut(x) {
     numArray = [];
     opArray.push(x);
     outPut.textContent = x;
+    endCalc = false;
   }
 }
 
@@ -45,6 +63,7 @@ function calculate() {
   outPut.textContent = result;
   inArray.push(result);
   inPut.textContent = inArray.join('');
+  endCalc = true;
  }
 
 function initialise() {
