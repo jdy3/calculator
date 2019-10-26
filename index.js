@@ -11,19 +11,13 @@ var endCalc = false;
 var disableDecimal = false;
 
 function iPut(x) {
-  if (x == '.') {
-    if (disableDecimal == false) {
-      inArray.push(x);
-      inPut.textContent = inArray.join('');
+  /*if (x == '.' && disableDecimal == true) {
     }
-    else {
-    }
-  }
-  else {
+  else {*/
   inArray.push(x);
   inPut.textContent = inArray.join('');
-  }
- }
+  //}
+}
 
 function oPut(x) {
   if (x == '.') {
@@ -49,13 +43,14 @@ function oPut(x) {
       minArray = [];
       numArray.push(x);
       outPut.textContent = numArray.join('');
+      inArray.push(x);
+      inPut.textContent = inArray.join('');
       disableDecimal = true;
     }
     else {
     }
   }
 }
-
   else if (x != '/' && x != '*' && x != '-' && x != '+') {
     if (endCalc == false || disableDecimal == true) {
     calcArray.push(opArray.pop());
@@ -111,10 +106,9 @@ function calculate() {
  }
 
 function initialise() {
- outPut.textContent = 0;
- inPut.textContent = '';
  inArray = [];
  numArray = [];
  calcArray = [];
- disableDecimal = false;
+ outPut.textContent = 0;
+ inPut.textContent = inArray.join('');
 }
