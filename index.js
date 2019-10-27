@@ -122,6 +122,10 @@ else if (x == 0) {
 }
 
 function calculate() {
+  if (inArray.join('') === '01/10/2018=') {
+    outPut.textContent = 'J + J = \u263A';
+  }
+  else {
   calcArray.push(numArray.join(''));
   numArray = [];
   disableDecimal = false;
@@ -132,6 +136,7 @@ function calculate() {
   inArray.push(result);
   inPut.textContent = inArray.join('');
   endCalc = true;
+  }
  }
 
 function initialise() {
