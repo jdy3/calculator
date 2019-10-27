@@ -11,12 +11,8 @@ var endCalc = false;
 var disableDecimal = false;
 
 function iPut(x) {
-  /*if (x == '.' && disableDecimal == true) {
-    }
-  else {*/
   inArray.push(x);
   inPut.textContent = inArray.join('');
-  //}
 }
 
 function oPut(x) {
@@ -32,6 +28,8 @@ function oPut(x) {
       disableDecimal = true;
     }
     else {
+    inArray.pop(x);
+    inPut.textContent = inArray.join('');
     }
   }
   else {
@@ -48,7 +46,38 @@ function oPut(x) {
       disableDecimal = true;
     }
     else {
+    inArray.pop(x);
+    inPut.textContent = inArray.join('');
     }
+  }
+}
+
+else if (x == 0) {
+  if (numArray.join('') === '0') {
+    inArray.pop(x);
+    inPut.textContent = inArray.join('');
+  }
+  else {
+    if (endCalc == false || disableDecimal == true) {
+      calcArray.push(opArray.pop());
+      opArray = [];
+      calcArray.push(minArray.pop());
+      minArray = [];
+      numArray.push(x);
+      outPut.textContent = numArray.join('');
+      }
+      else {
+        initialise();
+        calcArray.push(opArray.pop());
+        opArray = [];
+        calcArray.push(minArray.pop());
+        minArray = [];
+        numArray.push(x);
+        outPut.textContent = numArray.join('');
+        inArray.push(x);
+        inPut.textContent = inArray.join('');
+        endCalc = false;
+      }
   }
 }
   else if (x != '/' && x != '*' && x != '-' && x != '+') {
